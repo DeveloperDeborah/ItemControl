@@ -9,12 +9,13 @@ import javax.annotation.Nullable;
 public class TraderData
 {
 	public TraderData(ILocation location, RunsafeInventory inventory, @Nullable String tag,
-		boolean compareName, boolean compareDurability, boolean compareLore, boolean compareEnchants
+		boolean compareName, boolean compareDurability, boolean compareLore, boolean compareEnchants, boolean shouldPrintTagID
 	)
 	{
 		this.location = location;
 		this.inventory = inventory;
 		this.tag = tag;
+		this.shouldPrintTagID = shouldPrintTagID;
 		this.compareName = compareName;
 		this.compareDurability = compareDurability;
 		this.compareLore = compareLore;
@@ -40,6 +41,16 @@ public class TraderData
 	public void setTag(String tag)
 	{
 		this.tag = tag;
+	}
+
+	public boolean shouldPrintTagID()
+	{
+		return shouldPrintTagID;
+	}
+
+	public void setShouldPrintTagID(boolean value)
+	{
+		shouldPrintTagID = value;
 	}
 
 	public boolean isSaved()
@@ -119,6 +130,7 @@ public class TraderData
 	}
 
 	private String tag;
+	private boolean shouldPrintTagID;
 	private boolean compareName;
 	private boolean compareDurability;
 	private boolean compareLore;
